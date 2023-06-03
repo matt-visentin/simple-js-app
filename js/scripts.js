@@ -70,5 +70,5 @@ let pokemonList = [ //pokemons database for pokedex
         id: 29,
         type: ['poison'],
         height: 40,
-    },
+    }
 ];
