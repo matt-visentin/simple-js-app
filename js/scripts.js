@@ -1,4 +1,4 @@
-let pokemonList = [ //pokemons database for pokedex
+let pokemonList = [ // Pokemons database for pokedex
     {
         name: 'Bulbasaur',
         id: 1,
@@ -72,3 +72,8 @@ let pokemonList = [ //pokemons database for pokedex
         height: 40,
     }
 ];
+
+// Write on DOM all Pokemon's names and their hieght
+for (let i = 0; i < pokemonList.length; i++){
+    document.write('<p>' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ' cm)</p>')
+}
