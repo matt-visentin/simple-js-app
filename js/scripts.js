@@ -74,7 +74,9 @@ let pokemonRepository = ( function(){
         }
     ];
     function add(pokemon){
-        pokemonList.push(pokemon);
+        if (typeof pokemon === typeof pokemonList){
+            pokemonList.push(pokemon);
+        }
     }
     function getAll() {
         return pokemonList
