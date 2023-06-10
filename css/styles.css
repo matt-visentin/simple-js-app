@@ -14,9 +14,9 @@ body {
 h1 {
     text-align: center;
   }
-p {
+li {
     text-align: center;
-    border: 1px solid blue;
+    border: 1.5px solid blue;
     border-radius: 5px;
     padding: 2px;
     color: #FF2D00;
@@ -25,6 +25,7 @@ p {
     margin: auto;
     margin-bottom: 10px;
     background: white;
+    list-style-type: none;
 }
 
 @media all and (max-width: 400px) {
