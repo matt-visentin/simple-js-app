@@ -74,10 +74,10 @@ let pokemonList = [ // Pokemons database for pokedex
 ];
 
 // Writes on DOM all Pokemon's names and their hieght and highlights those bigger then 100cm
-for (let i = 0; i < pokemonList.length; i++){
-    if (pokemonList[i].height > 99){
-      document.write('<p>' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ' cm) - Wow! That is big!</p>');
-    }else{
-      document.write('<p>' + pokemonList[i].name + ' (height: ' + pokemonList[i].height + ' cm)</p>');
-    }
-  }
+pokemonList.forEach(function(pokemon) {
+    if (pokemon.height > 100) {
+        document.write('<li>' + pokemon.name + ' (height: ' + pokemon.height + ' cm) - Wow! That is big!</li>');
+}else{
+    document.write('<li>' + pokemon.name + ' (height: ' + pokemon.height + ' cm)</li>');
+}
+});
