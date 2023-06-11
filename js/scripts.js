@@ -101,7 +101,7 @@ console.log(pokemonRepository.getAll())
 // Writes on DOM all Pokemon's names and their hieght and highlights those bigger then 100cm
 pokemonRepository.getAll().forEach((pokemon) => {
     if (pokemon.height > 99) {
-        document.write('<li>' + pokemon.name + ' (height: ' + pokemon.height + ' cm) - Wow! That is big!</li>');
+        document.write('<li>' + pokemon.name + ' (height: ' + pokemon.height + ' cm) - <b>Wow! That is big!</b></li>');
     } else {
         document.write('<li>' + pokemon.name + ' (height: ' + pokemon.height + ' cm)</li>');
     }
