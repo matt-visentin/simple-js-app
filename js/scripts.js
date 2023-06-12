@@ -98,11 +98,14 @@ let pokemonRepository = ( function(){
 
 console.log(pokemonRepository.getAll())
 
+document.write('<ul>')
 // Writes on DOM all Pokemon's names and their hieght and highlights those bigger then 100cm
-pokemonRepository.getAll().forEach((pokemon) => {
+pokemonRepository.getAll().forEach(function(pokemon) {
+    document.write('<li>');
     if (pokemon.height > 99) {
-        document.write('<li>' + pokemon.name + ' (height: ' + pokemon.height + ' cm) - <b>Wow! That is big!</b></li>');
+        document.write(pokemon.name + ' (height: ' + pokemon.height + ' cm) - <b>Wow! That is big!</b>');
     } else {
-        document.write('<li>' + pokemon.name + ' (height: ' + pokemon.height + ' cm)</li>');
+        document.write(pokemon.name + ' (height: ' + pokemon.height + ' cm)');
     }
+    document.write('</li>');
 });
