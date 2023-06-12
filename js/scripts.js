@@ -74,7 +74,7 @@ let pokemonRepository = ( function(){
         }
     ];
     function add(pokemon){
-        if (typeof pokemon === typeof pokemonList){
+        if (typeof pokemon === typeof 'object'){
             if (Object.keys(pokemonList[0]).every((key) => key in pokemon)) {
                 alert(
                   `You have discovered a new Pokémon! "${pokemon.name}" data has been entered into the Pokédex.`
