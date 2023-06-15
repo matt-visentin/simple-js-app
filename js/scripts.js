@@ -120,9 +120,7 @@ let pokemonRepository = ( function(){
     }
 })();
 
-console.log(pokemonRepository.getAll())
-
-// Writes on DOM all Pokemon's names and their hieght and highlights those bigger then 100cm
+// Writes on DOM a list of Pokémon
 pokemonRepository.getAll().forEach(function(pokemon) {
     pokemonRepository.addListItem(pokemon);
 });
