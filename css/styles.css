@@ -12,9 +12,18 @@ body {
     color: #FFF;
     text-align: center;
 }
+
 h1 {
     text-align: center;
-  }
+}
+
+ul {
+    padding-inline-start: 0;
+}
+
+li {
+    list-style-type: none;
+}
 button {
     font-family: 'Roboto Mono', sans-serif;
     text-align: center;
@@ -29,11 +38,8 @@ button {
     background: white;
 }
 
-li {
-    list-style-type: none;
-}
 @media all and (max-width: 400px) {
-    p {
+    button {
         margin-left: 5px;
         margin-right: 5px;
     }
