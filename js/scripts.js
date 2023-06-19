@@ -1,78 +1,7 @@
 let pokemonRepository = ( function(){
-    let pokemonList = [ // Pokemons database for pokedex
-        {
-            name: 'Bulbasaur',
-            id: 1,
-            types: ['grass', 'poison'],
-            height: 70,
-        },
-        {
-            name: 'Charmander',
-            id: 4,
-            types: ['fier'],
-            height: 60,
-        },
-        {
-            name: 'Squirtle',
-            id: 7,
-            types: ['water'],
-            height: 50,
-        },
-        {
-            name: 'Caterpie',
-            id: 10,
-            types: ['bug'],
-            height: 30,
-        },
-        {
-            name: 'Weedle',
-            id: 13,
-            types: ['bug', 'poison'],
-            height: 30,
-        },
-        {
-            name: 'Pidgey',
-            id: 16,
-            types: ['flying', 'normal'],
-            height: 30,
-        },
-        {
-            name: 'Rattata',
-            id: 19,
-            types: ['normal'],
-            height: 30,
-        },
-        {
-            name: 'Spearow',
-            id: 21,
-            types: ['flying', 'normal'],
-            height: 30,
-        },
-        {
-            name: 'Ekans',
-            id: 23,
-            types: ['poison'],
-            height: 200,
-        },
-        {
-            name: 'Pikachu',
-            id: 25,
-            types: ['electric'],
-            height: 40,
-        },
-        {
-            name: 'Sandshrew',
-            id: 27,
-            types: ['ground'],
-            height: 60,
-        },
-        {
-            name: 'Nidoran',
-            id: 29,
-            types: ['poison'],
-            height: 40,
-        }
-    ];
+    let pokemonList = [];
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+
     function add(pokemon) {
         if (typeof pokemon === "object" &&
             "name" in pokemon
@@ -107,16 +36,38 @@ let pokemonRepository = ( function(){
         pokemonRepository.addEvent(button, pokemon);
     }
 
+    function loadList() {
+        return fetch(apiUrl).then(function(response) {
+            return response.json();
+        }).then(function(json) {
+            json.results.forEach(function(item) {
+            let pokemon = {
+                name: item.name.charAt(0).toUpperCase() + item.name.slice(1),
+                height: item.height,
+                types: item.types,
+                weight: item.weight,
+                detailsUrl: item.url,
+            };
+            add(pokemon);
+            // console.log(pokemon);
+            });
+        }).catch(function(e) {
+        console.error(e);
+        })
+    }
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
         showDetails: showDetails,
-        addEvent: addEvent
+        addEvent: addEvent,
+        loadList: loadList
     }
 })();
 
 // Writes on DOM a list of Pokémon
-pokemonRepository.getAll().forEach(function(pokemon) {
-    pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function(){
+    pokemonRepository.getAll().forEach(function(pokemon) {
+        pokemonRepository.addListItem(pokemon);
+    });
 });
