@@ -1,6 +1,7 @@
 /*
 List of Colors:
-Background Color: #75D7F2
+Background Color: #00a2c6
+Background Color Light: ##2CB3D9
 Primary Text Color: #FF2D00
 Secondary Text Color: #FFF
 Decoration Color: #002EFF
@@ -8,7 +9,7 @@ Decoration Color: #002EFF
 
 body {
     font-family: 'Roboto Mono', sans-serif;
-    background-color: #75D7F2;
+    background-color: #00a2c6;
     color: #FFF;
     text-align: center;
 }
