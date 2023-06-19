@@ -55,13 +55,38 @@ let pokemonRepository = ( function(){
         console.error(e);
         })
     }
+
+    function loadDetails(pokemon) {
+        let url = pokemon.detailsUrl;
+        return fetch(url).then(function(response) {
+            return response.json();
+        }).then(function(details) {
+          pokemon.name = details.name;
+          pokemon.id = details.id;
+          pokemon.height = details.height;
+          pokemon.types = details.types;
+          pokemon.sprite = details.sprites.front_default;
+          pokemon.sprite2 = details.sprites.back_default;
+          pokemon.weight = details.weight;
+        }).catch(function(e) {
+        console.error(e);
+        });
+    }
+
+    function showDetails(pokemon) {
+        pokemonRepository.loadDetails(pokemon).then(function() {
+            console.log(pokemon);
+        });
+    }
+    
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
         showDetails: showDetails,
         addEvent: addEvent,
-        loadList: loadList
+        loadList: loadList,
+        loadDetails: loadDetails
     }
 })();
 
