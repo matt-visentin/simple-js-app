@@ -73,20 +73,16 @@ let pokemonRepository = ( function(){
             height: 40,
         }
     ];
-    function add(pokemon){
-        if (typeof pokemon === typeof 'object'){
-            if (Object.keys(pokemonList[0]).every((key) => key in pokemon)) {
-                alert(
-                  `You have discovered a new Pokémon! "${pokemon.name}" data has been entered into the Pokédex.`
-                );
-                pokemonList.push(pokemon);
-              } else {
-                alert(
-                  `The data for the new Pokémon you are trying to add is not complete. Please verify that no fields are missing.`
-                );
-              }
+    function add(pokemon) {
+        if (typeof pokemon === "object" &&
+            "name" in pokemon
+        ) {
+          pokemonList.push(pokemon);
+        } else {
+          console.log("pokemon is not correct");
         }
     }
+
     function getAll() {
         return pokemonList
     }
