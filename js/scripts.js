@@ -65,8 +65,8 @@ let pokemonRepository = ( function(){
           pokemon.id = details.id;
           pokemon.height = details.height;
           pokemon.types = details.types;
-          pokemon.sprite = details.sprites.front_default;
-          pokemon.sprite2 = details.sprites.back_default;
+          pokemon.imageFront = details.sprites.front_default;
+          pokemon.imageBack = details.sprites.back_default;
           pokemon.weight = details.weight;
         }).catch(function(e) {
         console.error(e);
