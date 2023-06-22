@@ -16,11 +16,13 @@ let pokemonRepository = ( function(){
         return pokemonList
     }
     
+    // Add event on button to call Pokémon's detials modal 
     function addEvent(button, pokemon){
         button.addEventListener('click', function (){
           showDetails(pokemon)});
       }
-
+    
+    // Add a list element for each Pokémon
     function addListItem(pokemon){
         let pokemonList = document.querySelector('.pokemon-list');
         let listItem = document.createElement('li');
@@ -32,6 +34,7 @@ let pokemonRepository = ( function(){
         pokemonRepository.addEvent(button, pokemon);
     }
 
+    // Fetches Pokémon from API library
     function loadList() {
         return fetch(apiUrl).then(function(response) {
             return response.json();
@@ -52,6 +55,7 @@ let pokemonRepository = ( function(){
         })
     }
 
+    // Fetches Pokémon details
     function loadDetails(pokemon) {
         let url = pokemon.detailsUrl;
         return fetch(url).then(function(response) {
@@ -69,6 +73,7 @@ let pokemonRepository = ( function(){
         });
     }
 
+    // Add modal with selcted Pokémon's details
     function showDetails(pokemon) {
         pokemonRepository.loadDetails(pokemon).then(function() {
             let modalContainer = document.querySelector("#modal-container");
