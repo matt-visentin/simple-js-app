@@ -1,6 +1,6 @@
 let pokemonRepository = ( function(){
     let pokemonList = [];
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
     function add(pokemon) {
         if (typeof pokemon === "object" &&
@@ -14,10 +14,6 @@ let pokemonRepository = ( function(){
 
     function getAll() {
         return pokemonList
-    }
-
-    function showDetails (pokemon) {
-        console.log('Name: ' + pokemon.name + '; ID: ' + pokemon.id + '; Height: ' + pokemon.height + '; Types: ' + pokemon.types);
     }
     
     function addEvent(button, pokemon){
@@ -75,7 +71,59 @@ let pokemonRepository = ( function(){
 
     function showDetails(pokemon) {
         pokemonRepository.loadDetails(pokemon).then(function() {
-            console.log(pokemon);
+            let modalContainer = document.querySelector("#modal-container");
+    
+            modalContainer.innerHTML = "";   // Clear all existing modal content
+            
+            let modal = document.createElement('div');
+            modal.classList.add('modal');
+        
+            // Add the new modal content
+            let closeButtonElement = document.createElement("button");
+            closeButtonElement.classList.add("modal-close");
+            closeButtonElement.innerText = "Close"
+            closeButtonElement.addEventListener("click", hideModal);
+        
+            let titleElement = document.createElement("h1");
+            titleElement.innerText = pokemon.name;
+
+            let contentHeightElement = document.createElement("p");
+            contentHeightElement.innerText = `Height: ${pokemon.height}`;
+
+            let contentIdElement = document.createElement("p");
+            contentIdElement.innerText = `ID: ${pokemon.id}`;
+
+            let contentImageElement = document.createElement("img");
+            contentImageElement.src = pokemon.imageFront;
+            
+            modal.appendChild(closeButtonElement);
+            modal.appendChild(titleElement);
+            modal.appendChild(contentHeightElement);
+            modal.appendChild(contentIdElement);
+            modal.appendChild(contentImageElement);
+            modal.appendChild(contentImageElement);
+            modalContainer.appendChild(modal);
+        
+            modalContainer.classList.add("is-visible");
+        
+            modalContainer.addEventListener("click", (e) => {
+                let target = e.target;
+                if (target === modalContainer) {
+                    hideModal();
+                }
+            })
+        
+            function hideModal() {
+                let modalContainer = document.querySelector("#modal-container");
+                modalContainer.classList.remove("is-visible");
+            }
+            
+            window.addEventListener("keydown", (e) => {
+                let modalContainer = document.querySelector("#modal-container");
+                if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
+                    hideModal();
+                }
+            });
         });
     }
     
