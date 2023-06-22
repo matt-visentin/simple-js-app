@@ -10,7 +10,7 @@ Button Hoover Color: #009dff4e
 
 body {
     font-family: 'Roboto Mono', sans-serif;
-    background-color: #00a2c6;
+    background-color: #73ceff;
     color: #FFF;
     text-align: center;
 }
@@ -85,30 +85,48 @@ li {
 
 .modal {
   margin: auto;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
-  background: #fff;
+  border: 2px solid blue;
+  background: #73ceff;
   padding: 15px;
   width: 100%;
-  max-width: 700px;
+  max-width: 400px;
   text-align: left;
+  font-family: 'Roboto Mono', sans-serif;
+  border-radius: 5px;
 }
 
 .modal-close {
   float: right;
+  margin: auto;
   -webkit-appearance: none;
   border: 0;
   background: none;
   color: #000;
   text-decoration: underline;
+  font-family: 'Roboto Mono', sans-serif;
 }
+
+.modal-close:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
 
 .modal h1 {
   margin-top: 0;
-  color: #000;
+  color: #FF2D00;
 }
 
 .modal p {
   margin-bottom: 0;
   color: #000;
+}
+
+.modal img {
+  display: flex;
+  justify-content: center;
+  min-width: 40%;
+  margin: auto;
 }
