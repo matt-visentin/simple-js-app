@@ -5,6 +5,7 @@ Background Color Light: ##2CB3D9
 Primary Text Color: #FF2D00
 Secondary Text Color: #FFF
 Decoration Color: #002EFF
+Button Hoover Color: #009dff4e
 */
 
 body {
@@ -12,6 +13,10 @@ body {
     background-color: #00a2c6;
     color: #FFF;
     text-align: center;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 h1 {
@@ -25,7 +30,8 @@ ul {
 li {
     list-style-type: none;
 }
-button {
+
+.pokemon-button {
     font-family: 'Roboto Mono', sans-serif;
     text-align: center;
     border: 1.5px solid blue;
@@ -33,10 +39,23 @@ button {
     padding: 2px;
     color: #FF2D00;
     padding: 10px;
-    min-width: 300px;
-    max-width: 700px;
+    min-width: 200px;
     margin-bottom: 10px;
     background: white;
+    display: inline-block;
+}
+
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 5px;
+}
+
+.pokemon-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  font-weight: bold;
+  background: #96d518;
 }
 
 #modal-container {
@@ -92,11 +111,4 @@ button {
 .modal p {
   margin-bottom: 0;
   color: #000;
-}
-
-@media all and (max-width: 400px) {
-    button {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
 }
