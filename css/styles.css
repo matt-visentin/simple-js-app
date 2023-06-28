@@ -22,11 +22,19 @@ body {
 h1 {
     text-align: center;
 }
-
+.navbar {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .form-control {
   font-family: 'Roboto Mono', sans-serif;
 }
-
+a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 1.5rem;
+}
 ul {
     padding-inline-start: 0;
 }
