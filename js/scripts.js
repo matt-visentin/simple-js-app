@@ -23,16 +23,21 @@ let pokemonRepository = ( function(){
       }
     
     // Add a list element for each Pokémon
-    function addListItem(pokemon){
-        let pokemonList = document.querySelector('.pokemon-list');
-        let listItem = document.createElement('li');
-        let button = document.createElement('button');
-        button.innerText = pokemon.name;
-        button.classList.add('pokemon-button');
-        listItem.appendChild(button);
-        pokemonList.appendChild(listItem);
-        pokemonRepository.addEvent(button, pokemon);
-    }
+    function addListItem(pokemon) {
+        let searchInput = document.getElementById("searchInput").value.toLowerCase();
+        let pokemonName = pokemon.name.toLowerCase();
+    
+        if (pokemonName.includes(searchInput)) {
+          let pokemonList = document.querySelector(".pokemon-list");
+          let listItem = document.createElement("li");
+          let button = document.createElement("button");
+          button.innerText = pokemon.name;
+          button.classList.add("pokemon-button");
+          listItem.appendChild(button);
+          pokemonList.appendChild(listItem);
+          pokemonRepository.addEvent(button, pokemon);
+        }
+      }
 
     // Fetches Pokémon from API library
     function loadList() {
@@ -149,3 +154,20 @@ pokemonRepository.loadList().then(function(){
         pokemonRepository.addListItem(pokemon);
     });
 });
+
+  // Add event listener to search input
+  let searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("input", function () {
+    // Clear the existing list
+    let pokemonList = document.querySelector(".pokemon-list");
+    pokemonList.innerHTML = "";
+  
+    // Filter and display Pokémon based on search letter
+    let searchLetter = searchInput.value.toLowerCase();
+    pokemonRepository.getAll().forEach(function (pokemon) {
+      let pokemonName = pokemon.name.toLowerCase();
+      if (pokemonName.includes(searchLetter)) {
+        pokemonRepository.addListItem(pokemon);
+      }
+    });
+  });

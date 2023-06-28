@@ -23,6 +23,10 @@ h1 {
     text-align: center;
 }
 
+.form-control {
+  font-family: 'Roboto Mono', sans-serif;
+}
+
 ul {
     padding-inline-start: 0;
 }
