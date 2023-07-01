@@ -45,6 +45,12 @@ li {
   list-style-type: none;
 }
 
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 5px;
+}
+
 .pokemon-button {
   font-family: 'Roboto Mono', sans-serif;
   text-align: center;
@@ -59,16 +65,12 @@ li {
   display: inline-block;
 }
 
-.pokemon-list {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-grid-gap: 5px;
-}
-
 .pokemon-button:hover {
 cursor: pointer;
 opacity: 0.8;
 font-weight: bold;
+color: #FF2D00;
+border: 1.5px solid blue;
 background: #96d518;
 }
 
@@ -76,6 +78,7 @@ background: #96d518;
 padding: 15px;
 max-width: 400px;
 }
+
 .modal-content {
 border: 2px solid blue;
 background: #73ceff;

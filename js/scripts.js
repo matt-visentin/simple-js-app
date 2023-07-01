@@ -32,7 +32,7 @@ let pokemonRepository = ( function(){
         let listItem = document.createElement("li");
         let button = document.createElement("button");
         button.innerText = pokemon.name;
-        button.classList.add("pokemon-button");
+        button.classList.add("pokemon-button", "btn", "btn-outline-success");
         button.setAttribute("data-toggle", "modal");
         button.setAttribute("data-target", "#modal-container");
         listItem.appendChild(button);
@@ -112,17 +112,17 @@ pokemonRepository.loadList().then(function(){
 
 // Add event listener to search input
 let searchInput = document.getElementById("searchInput");
-searchInput.addEventListener("input", function () {
-// Clear the existing list
-let pokemonList = document.querySelector(".pokemon-list");
-pokemonList.innerHTML = "";
+  searchInput.addEventListener("input", function () {
+  // Clear the existing list
+  let pokemonList = document.querySelector(".pokemon-list");
+  pokemonList.innerHTML = "";
 
-// Filter and display Pokémon based on search letter
-let searchLetter = searchInput.value.toLowerCase();
-pokemonRepository.getAll().forEach(function (pokemon) {
-  let pokemonName = pokemon.name.toLowerCase();
-  if (pokemonName.includes(searchLetter)) {
-    pokemonRepository.addListItem(pokemon);
-  }
-});
+  // Filter and display Pokémon based on search letter
+  let searchLetter = searchInput.value.toLowerCase();
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    let pokemonName = pokemon.name.toLowerCase();
+    if (pokemonName.includes(searchLetter)) {
+      pokemonRepository.addListItem(pokemon);
+    }
+  });
 });
