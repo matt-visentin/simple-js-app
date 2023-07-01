@@ -16,8 +16,8 @@
 <body>
     <header>
         <div>
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">Pokédex</a>
+            <nav class="navbar">
+                <a class="navbar-brand" id="navbar-brand" href="#">Pokédex</a>
                 <form>
                     <input class="form-control" type="search" placeholder="Search by Name" id="searchInput" aria-label="Search">
                 </form>
@@ -26,7 +26,7 @@
     </header>
     <main>
         <ul class="pokemon-list list-group d-grid row"></ul>
-        <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="modal-containerLabel" style="display: block;" aria-hidden="true">
+        <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="modal-containerLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content" id="modal-content">
                     <div class="modal-header border-0">
