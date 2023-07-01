@@ -14,7 +14,9 @@ body {
   color: #000;
   text-align: center;
 }
-
+main {
+  margin: 15px;
+}
 /* * {
 box-sizing: border-box;
 } */
