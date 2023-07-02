@@ -1,0 +1,91 @@
+/*
+List of Colors:
+Background Color: #73CEFF
+Button Primary Background Color: #FFF
+Button Secondary Background Color: #96D518
+Primary Text Color: #CF2600E8
+Secondary Text Color: #000
+Decoration Color: #0000FF
+*/
+
+:root {
+  --primary-text-color: #CF2600E8;
+  --secondary-text-color: #000;
+  --background-color: #73CEFF;
+  --button-background-color: #FFF;
+  --button-background-color-hover: #96D518;
+  --decoration-color: #0000FF;
+}
+
+body {
+  font-family: 'Roboto Mono', sans-serif;
+  background-color: var(--background-color);;
+  color: var(--secondary-text-color);
+  text-align: center;
+}
+
+main {
+  margin: 20px;
+  margin-top: 1px;
+}
+
+.form-control {
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+  font-weight: bold;
+}
+
+a:hover {
+  color: #000;
+}
+ul {
+  padding-inline-start: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 5px;
+}
+
+.pokemon-button {
+  font-family: 'Roboto Mono', sans-serif;
+  text-align: center;
+  border: 1.5px solid var(--decoration-color);
+  border-radius: 5px;
+  padding: 2px;
+  color: var(--primary-text-color);
+  padding: 10px;
+  min-width: 200px;
+  margin-bottom: 10px;
+  background: var(--button-background-color);
+  display: inline-block;
+}
+
+.pokemon-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  font-weight: bold;
+  color: var(--primary-text-color);
+  border: 1.5px solid var(--decoration-color);
+  background: var(--button-background-color-hover);
+}
+
+.modal-content {
+  border: 2px solid var(--decoration-color);
+  background: var(--background-color);
+  font-family: 'Roboto Mono', sans-serif;
+  border-radius: 5px;
+}
+
+h2 {
+  color: var(--primary-text-color);
+}

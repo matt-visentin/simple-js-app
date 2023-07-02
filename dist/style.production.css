@@ -1,0 +1,83 @@
+/*
+List of Colors:
+Background Color: #73CEFF
+Button Primary Background Color: #FFF
+Button Secondary Background Color: #96D518
+Primary Text Color: #CF2600E8
+Secondary Text Color: #000
+Decoration Color: #0000FF
+*/
+
+body {
+    font-family: 'Roboto Mono', sans-serif;
+    background-color: #73CEFF;;
+    color: #000;
+    text-align: center;
+  }
+  
+  main {
+    margin: 20px;
+    margin-top: 1px;
+  }
+  
+  .form-control {
+    font-family: 'Roboto Mono', sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    color: #000;
+  }
+  ul {
+    padding-inline-start: 0;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  .pokemon-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 5px;
+  }
+  
+  .pokemon-button {
+    font-family: 'Roboto Mono', sans-serif;
+    text-align: center;
+    border: 1.5px solid #0000FF;
+    border-radius: 5px;
+    padding: 2px;
+    color: #CF2600E8;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 10px;
+    background: #FFF;
+    display: inline-block;
+  }
+  
+  .pokemon-button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    font-weight: bold;
+    color: #CF2600E8;
+    border: 1.5px solid #0000FF;
+    background: #96D518;
+  }
+  
+  .modal-content {
+    border: 2px solid #0000FF;
+    background: #73CEFF;
+    font-family: 'Roboto Mono', sans-serif;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    color: #CF2600E8;
+  }
+  

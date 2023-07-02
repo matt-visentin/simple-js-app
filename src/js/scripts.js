@@ -2,10 +2,9 @@ let pokemonRepository = ( function(){
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
+  // Add Pokémon to the list 
   function add(pokemon) {
-      if (typeof pokemon === "object" &&
-          "name" in pokemon
-      ) {
+      if (typeof pokemon === "object" && "name" in pokemon) {
         pokemonList.push(pokemon);
       } else {
         console.log("pokemon is not correct");
