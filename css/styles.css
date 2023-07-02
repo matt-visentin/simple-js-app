@@ -30,6 +30,9 @@ color: #000;
 font-weight: bold;
 }
 
+a:hover {
+  color: #000;
+}
 ul {
   padding-inline-start: 0;
 }
@@ -72,4 +75,8 @@ border: 2px solid blue;
 background: #73ceff;
 font-family: 'Roboto Mono', sans-serif;
 border-radius: 5px;
+}
+
+h2 {
+color: #d22401;
 }
